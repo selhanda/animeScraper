@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import re
 import requests
 import json
-site = ["https://ww.anime4up.com/anime/naruto-shippuuden/"]
+site = ["https://ww.anime4up.com/anime/death-note/"]
 data = {}
 data['episode'] = []
 vidios = [] #use1
@@ -11,8 +11,8 @@ image=[] #USE1
 titles=[] #USE1
 linkestwo=""
 story=[] #USE1
-classname="vidbm"
-description='Naruto: Shippuuden Anime Story After two and a half years have passed since Naruto Uzumaki left the Hidden Leaf Village Konoha for intense training due to events that motivated his desire to become stronger now Akatsuki, a mysterious organization of the evil ninja elite, approaches its grand plan that may threaten the safety of the entire Shinobi world.'
+classname="solidfiles - HD"
+description='Death Note is a story about a hardworking student, Yagami, who happens to pick up a Death Note that has been thrown from the Death God, Riku. In picking it up, we thought it was just the children'
 
 i=1
 for l in site:
@@ -47,9 +47,10 @@ for l in site:
         try:
             try:
                 link=soup.find("a", string=classname)
-                print("pass")
+                
         
                 if classname in link.get('data-ep-url'):
+                    print("try 1")
                     vidios.append(link.get('data-ep-url'))
             
             
@@ -64,10 +65,11 @@ for l in site:
                     print(link.get('data-ep-url'))
                     i+=1
             except:
-                link=soup.find("a", string="uqload")
-                print("pass")
+                link=soup.find("a", string="uptostream - HD")
+                
         
-                if "uqload" in link.get('data-ep-url'):
+                if "uptostream - HD" in link.get('data-ep-url'):
+                    print("try 2")
                     vidios.append(link.get('data-ep-url'))
             
             
