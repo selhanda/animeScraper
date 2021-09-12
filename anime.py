@@ -46,7 +46,7 @@ for l in site:
         #link=soup.find('iframe', attrs={})
         try:
             try:
-                link=soup.find("a", string=classname)
+                link=soup.find("a", string="solidfiles - HD")
                 
         
                 if classname in link.get('data-ep-url'):
@@ -68,7 +68,7 @@ for l in site:
                 link=soup.find("a", string="uptostream - HD")
                 
         
-                if "uptostream - HD" in link.get('data-ep-url'):
+                if "uptostream" in link.get('data-ep-url'):
                     print("try 2")
                     vidios.append(link.get('data-ep-url'))
             
