@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import re
 import requests
 import json
-site = ["https://ww.anime4up.com/anime/death-note/"]
+site = ["https://ww.anime4up.com/anime/shingeki-no-kyojin-season-3-part-2/"]
 data = {}
 data['episode'] = []
 vidios = [] #use1
@@ -11,8 +11,11 @@ image=[] #USE1
 titles=[] #USE1
 linkestwo=""
 story=[] #USE1
-classname="solidfiles - HD"
-description='Death Note is a story about a hardworking student, Yagami, who happens to pick up a Death Note that has been thrown from the Death God, Riku. In picking it up, we thought it was just the children'
+classname="uptostream"
+secondname="solidfiles - HD"
+linkname="uptostream"
+secondlinkname="solidfiles"
+description='The story of the Shingeki no Kyojin Season 3 anime is a continuation of the events of the previous season.'
 
 i=1
 for l in site:
@@ -46,10 +49,11 @@ for l in site:
         #link=soup.find('iframe', attrs={})
         try:
             try:
-                link=soup.find("a", string="solidfiles - HD")
+                link=soup.find("a", string=classname)
+                
                 
         
-                if classname in link.get('data-ep-url'):
+                if linkname in link.get('data-ep-url'):
                     print("try 1")
                     vidios.append(link.get('data-ep-url'))
             
@@ -65,10 +69,10 @@ for l in site:
                     print(link.get('data-ep-url'))
                     i+=1
             except:
-                link=soup.find("a", string="uptostream - HD")
+                link=soup.find("a", string=secondname)
                 
         
-                if "uptostream" in link.get('data-ep-url'):
+                if secondlinkname in link.get('data-ep-url'):
                     print("try 2")
                     vidios.append(link.get('data-ep-url'))
             
