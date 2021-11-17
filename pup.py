@@ -13,8 +13,8 @@ def login():
         site = s.get("https://freeanimes4u.000webhostapp.com/admin/login.php")
         bs(site.content, "html.parser")
         login_data = {
-        "email":"codersalah0@gmail.com",
-        "password":"Salah0611444831@"
+        "email":"#3333##33#3###33#33",
+        "password":"#######3##33##33##3"
         }
         r=s.post("https://freeanimes4u.000webhostapp.com/admin/login.php",login_data,headers=headers)
         if r.status_code==200 or r.status_code==302:
